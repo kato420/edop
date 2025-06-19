@@ -1,0 +1,27 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {section}{\numberline {1}Introducción}{2}{section.1}%
+\contentsline {section}{\numberline {2}Objetivos}{3}{section.2}%
+\contentsline {section}{\numberline {3}Justificación}{3}{section.3}%
+\contentsline {section}{\numberline {4}Marco teórico}{4}{section.4}%
+\contentsline {section}{\numberline {5}Formulación del problema}{5}{section.5}%
+\contentsline {section}{\numberline {6}Metodología}{9}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Recolección de datos}{9}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Análisis de datos}{10}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Justificación de la elección del enfoque analítico}{12}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}Procedimiento analítico}{13}{subsection.6.4}%
+\contentsline {subsection}{\numberline {6.5}Limitaciones del enfoque}{17}{subsection.6.5}%
+\contentsline {section}{\numberline {7}Resultados}{19}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Introducción a los resultados}{19}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Presentación estructurada de los hallazgos}{19}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Uso de figuras y tablas}{19}{subsection.7.3}%
+\contentsline {subsection}{\numberline {7.4}Comparaciones}{19}{subsection.7.4}%
+\contentsline {subsection}{\numberline {7.5}Resumen de resultados}{19}{subsection.7.5}%
+\contentsline {section}{\numberline {8}Discusion}{19}{section.8}%
+\contentsline {section}{\numberline {9}Conclusiones}{19}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Resumen de los hallazgos principales:}{19}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Relevancia teórica y práctica de los resultados:}{19}{subsection.9.2}%
+\contentsline {subsection}{\numberline {9.3}Relevancia para el campo de estudio:}{20}{subsection.9.3}%
+\contentsline {subsection}{\numberline {9.4}Síntesis y relevancia del estudio:}{20}{subsection.9.4}%
+\contentsline {section}{\numberline {10}Recomendaciones}{20}{section.10}%
+\contentsline {section}{\numberline {11}Referencias}{21}{section.11}%
+\contentsline {section}{\numberline {12}Anexos}{23}{section.12}%

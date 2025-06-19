@@ -1,0 +1,104 @@
+\documentclass[11pt, a4paper]{article}
+% EN EL PREÁMBULO
+\usepackage{url}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks = true,       % Activa colores (en lugar de cuadros)
+    linkcolor  = black,      % Color para enlaces internos (índice, figuras, etc.)
+    citecolor  = black,      % Color para citas bibliográficas
+    urlcolor   = blue,       % Color AZUL solo para URLs
+    pdftitle   = {Título de tu documento}, % Opcional
+    pdfborder  = {0 0 0}     % Elimina bordes feos alrededor de los enlaces
+}
+\usepackage{amsmath}       % Para ecuaciones matemáticas
+\usepackage{amssymb}       % Para símbolos matemáticos
+\usepackage{graphicx}      % Para incluir imágenes
+\usepackage{float}         % Para control de posición de figuras
+\usepackage{booktabs}      % Para tablas profesionales
+\usepackage{array}         % Para control de columnas en tablas
+\usepackage[spanish]{babel} % Idioma español
+\usepackage[utf8]{inputenc} % Codificación UTF-8
+\usepackage[T1]{fontenc}    % Codificación de fuentes
+\usepackage{enumitem}       % Listas personalizadas
+\usepackage{parskip}        % Espaciado entre párrafos
+\usepackage{siunitx}        % Para unidades de medida
+\sisetup{output-decimal-marker = {,}} % Configuración para español
+
+% Configuración básica directa en el documento principal
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{graphicx}
+
+% paquetes finales
+\usepackage{listings}
+\usepackage{xcolor} % Para colores en el código
+
+% Configuración básica para MATLAB
+\lstset{
+    language=Matlab,
+    basicstyle=\ttfamily\small,
+    backgroundcolor=\color{white},
+    frame=single,
+    rulecolor=\color{black},
+    tabsize=4,
+    captionpos=b,
+    breaklines=true,
+    numbers=left,
+    numberstyle=\tiny\color{gray}
+}
+
+% Configuración de página
+\geometry{a4paper, margin=2.5cm, top=3cm, bottom=2.5cm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.8em}
+\pagestyle{empty} % Sin numeración ni encabezados
+
+% Comando para placeholder de imágenes
+\newcommand{\imgplaceholder}[1]{
+    \begin{center}
+        \framebox{\parbox{0.8\textwidth}{
+            \centering\vspace{1cm}
+            \textbf{#1}
+            \vspace{1cm}
+        }}
+        \end{center}
+}
+
+% Evitar errores comunes
+\overfullrule=0pt % Desactivar indicador de líneas largas
+\hbadness=10000   % Reducir advertencias de underfull/overfull
+
+\begin{document}
+
+% Cargar carátula desde archivo externo
+\input{caratula}
+
+% Índice automático
+\tableofcontents
+\newpage
+
+% Sección de Resumen (vacía por ahora)
+\input{resumen}
+\newpage
+
+\input{introduccion}   % Incluye pregunta investigación
+\input{objetivos}      % Incluye objetivos
+\input{justificacion}  % Incluye justificación
+\newpage
+\input{marco} % Marco teórico
+\input{formulacion.tex}
+% ... secciones previas ...
+\input{metodologia}
+% Después de las secciones anteriores
+\input{resultados}
+% Después de las secciones anteriores
+\input{discusion}
+% Después de resultados
+\input{conclusiones}
+\input{recomendaciones}
+\input{referencias}
+\newpage
+\input{anexos}
+\end{document}
