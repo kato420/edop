@@ -1,7 +1,5 @@
 # 🔌 Optimización de Filtros Eléctricos para Vehículos Eléctricos
 
-![Electric Vehicle Charger](https://img.icons8.com/color/96/000000/electric-car.png) *Un proyecto de ingeniería para mejorar la eficiencia de carga de VE*
-
 ## 📋 Información del Proyecto
 
 **📌 Título:**  
@@ -12,9 +10,6 @@ Ecuaciones Diferenciales Ordinarias (CC2101) - Teoría 1.01 - Grupo 6
 
 **👩‍🏫 Profesora:**  
 Patricia Reynoso Quispe
-
-**📅 Fecha de Entrega:**  
-17 de Junio 2025
 
 ## 👥 Integrantes del Equipo
 
