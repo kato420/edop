@@ -47,13 +47,13 @@ provenientes de artículos científicos y modelos teóricos validados. Entre est
 incluyeron:
 
 \begin{itemize}
-    \item \textbf{Resistencia interna de la batería (\(R_{bat}\)):} Determinada a partir de los estudios de Sainz y Balcells (2011) sobre la mitigación de armónicos en cargadores de baterías para vehículos eléctricos.
+	\item \textbf{Resistencia interna de la batería (\(R_{bat}\)):} Determinada a partir de los estudios de Sainz y Balcells (2011) sobre la mitigación de armónicos en cargadores de baterías para vehículos eléctricos.
 
-    \item \textbf{Capacitancia (\(C\)):} Parámetro que define la capacidad del sistema para almacenar energía, basado en las mediciones de Cittanti et al. (2021) sobre el diseño de filtros LCL trifásicos.
+	\item \textbf{Capacitancia (\(C\)):} Parámetro que define la capacidad del sistema para almacenar energía, basado en las mediciones de Cittanti et al. (2021) sobre el diseño de filtros LCL trifásicos.
 
-    \item \textbf{Resistencia equivalente del sistema (\(R_x\)):} Determinada por los valores encontrados en la optimización de filtros LCL.
+	\item \textbf{Resistencia equivalente del sistema (\(R_x\)):} Determinada por los valores encontrados en la optimización de filtros LCL.
 
-    \item \textbf{Inductancia (\(L\)):} Tomada de los parámetros definidos por Cittanti et al. (2021) para el diseño de sistemas de carga rápida.
+	\item \textbf{Inductancia (\(L\)):} Tomada de los parámetros definidos por Cittanti et al. (2021) para el diseño de sistemas de carga rápida.
 \end{itemize}
 
 \subsubsection*{Formulación de la ecuación diferencial ordinaria (EDO):}
@@ -63,15 +63,15 @@ la carga almacenada en el capacitor en función del tiempo. La ecuación general
 este sistema es:
 
 \[
-    (R_{bat} + R_x + R_c) \cdot \frac{dq(t)}{dt} + \frac{q(t)}{C} = V_0 \sin(\omega t)
+	(R_{bat} + R_x + R_c) \cdot \frac{dq(t)}{dt} + \frac{q(t)}{C} = V_0 \sin(\omega t)
 \]
 
 Donde:
 \begin{itemize}
-    \item \(q(t)\) es la carga almacenada en el capacitor en el tiempo \(t\),
-    \item \(V_0\) es el voltaje de entrada del sistema (proveniente de la batería),
-    \item \(\omega\) es la frecuencia de la señal de entrada,
-    \item \(R_{bat}\), \(R_x\) y \(R_c\) son las resistencias involucradas en el sistema.
+	\item \(q(t)\) es la carga almacenada en el capacitor en el tiempo \(t\),
+	\item \(V_0\) es el voltaje de entrada del sistema (proveniente de la batería),
+	\item \(\omega\) es la frecuencia de la señal de entrada,
+	\item \(R_{bat}\), \(R_x\) y \(R_c\) son las resistencias involucradas en el sistema.
 \end{itemize}
 
 Esta EDO representa un sistema de primer orden, y su solución es clave para entender el
@@ -99,32 +99,32 @@ carga.
 
 \subsubsection*{Pasos en la Simulación:}
 \begin{enumerate}
-    \item \textbf{Transformación de la EDO al Dominio de Laplace:}
-          \begin{itemize}
-              \item La ecuación diferencial del sistema de carga es:
-                    \[
-                        (R_{bat} + R_x + R_c) \cdot \frac{dq(t)}{dt} + \frac{q(t)}{C} = V_0 \sin(\omega t)
-                    \]
-              \item Aplicamos la Transformada de Laplace a ambos lados de la ecuación. La derivada en el tiempo se convierte en una multiplicación de \(s\), el operador de Laplace:
-                    \[
-                        (R_{bat} + R_x + R_c)sQ(s) + \frac{Q(s)}{C} = \frac{V_0}{s^2 + \omega^2}
-                    \]
-              \item Aquí, \(Q(s)\) es la transformada de \(q(t)\) en el dominio de Laplace.
-          \end{itemize}
+	\item \textbf{Transformación de la EDO al Dominio de Laplace:}
+	      \begin{itemize}
+		      \item La ecuación diferencial del sistema de carga es:
+		            \[
+			            (R_{bat} + R_x + R_c) \cdot \frac{dq(t)}{dt} + \frac{q(t)}{C} = V_0 \sin(\omega t)
+		            \]
+		      \item Aplicamos la Transformada de Laplace a ambos lados de la ecuación. La derivada en el tiempo se convierte en una multiplicación de \(s\), el operador de Laplace:
+		            \[
+			            (R_{bat} + R_x + R_c)sQ(s) + \frac{Q(s)}{C} = \frac{V_0}{s^2 + \omega^2}
+		            \]
+		      \item Aquí, \(Q(s)\) es la transformada de \(q(t)\) en el dominio de Laplace.
+	      \end{itemize}
 
-    \item \textbf{Resolución para Función de Transferencia:}
-          \begin{itemize}
-              \item De la ecuación obtenida en Laplace, despejamos \(Q(s)\) para obtener la función de transferencia \(G(s)\), que relaciona la carga \(Q(s)\) con la entrada \(V_0 \sin(\omega t)\):
-                    \[
-                        Q(s) = \frac{V_0}{ (R_{bat} + R_x + R_c)s + \frac{1}{C}} + \frac{1}{(s^2 + \omega^2)}
-                    \]
-              \item La función de transferencia \(G(s)\) es crucial para entender cómo el sistema responde a diferentes entradas y cómo los armónicos son mitigados.
-          \end{itemize}
+	\item \textbf{Resolución para Función de Transferencia:}
+	      \begin{itemize}
+		      \item De la ecuación obtenida en Laplace, despejamos \(Q(s)\) para obtener la función de transferencia \(G(s)\), que relaciona la carga \(Q(s)\) con la entrada \(V_0 \sin(\omega t)\):
+		            \[
+			            Q(s) = \frac{V_0}{ (R_{bat} + R_x + R_c)s + \frac{1}{C}} + \frac{1}{(s^2 + \omega^2)}
+		            \]
+		      \item La función de transferencia \(G(s)\) es crucial para entender cómo el sistema responde a diferentes entradas y cómo los armónicos son mitigados.
+	      \end{itemize}
 
-    \item \textbf{Validación de los Resultados:}
-          \begin{itemize}
-              \item Los resultados obtenidos de la simulación serán comparados con soluciones analíticas o datos experimentales de referencia. Se espera que la simulación numérica proporcione una respuesta precisa y coherente con los datos de referencia.
-          \end{itemize}
+	\item \textbf{Validación de los Resultados:}
+	      \begin{itemize}
+		      \item Los resultados obtenidos de la simulación serán comparados con soluciones analíticas o datos experimentales de referencia. Se espera que la simulación numérica proporcione una respuesta precisa y coherente con los datos de referencia.
+	      \end{itemize}
 \end{enumerate}
 
 \subsubsection*{Diagrama de flujo metodológico:}
@@ -132,11 +132,11 @@ Para garantizar la claridad y la trazabilidad de cada paso, se elaboró un diagr
 describe el proceso metodológico desde la formulación de la EDO hasta la obtención de los
 resultados (Anexo 1). Este diagrama incluye los siguientes pasos:
 \begin{enumerate}
-    \item \textbf{Recolección de datos:} Obtención de los parámetros iniciales y condiciones del sistema como \(R_{bat}\), \(R_x\), \(C\), etc.
-    \item \textbf{Formulación de la EDO:} Determinación de la ecuación diferencial que describe el sistema de carga.
-    \item \textbf{Simulación numérica:} Aplicación de métodos numéricos para obtener la solución temporal de la EDO.
-    \item \textbf{Análisis de resultados:} Evaluación de los resultados obtenidos a partir de la simulación numérica.
-    \item \textbf{Comparación con soluciones analíticas:} Validación de los resultados obtenidos mediante la comparación con soluciones analíticas o datos de referencia.
+	\item \textbf{Recolección de datos:} Obtención de los parámetros iniciales y condiciones del sistema como \(R_{bat}\), \(R_x\), \(C\), etc.
+	\item \textbf{Formulación de la EDO:} Determinación de la ecuación diferencial que describe el sistema de carga.
+	\item \textbf{Simulación numérica:} Aplicación de métodos numéricos para obtener la solución temporal de la EDO.
+	\item \textbf{Análisis de resultados:} Evaluación de los resultados obtenidos a partir de la simulación numérica.
+	\item \textbf{Comparación con soluciones analíticas:} Validación de los resultados obtenidos mediante la comparación con soluciones analíticas o datos de referencia.
 \end{enumerate}
 
 \subsection{Justificación de la elección del enfoque analítico}
@@ -196,10 +196,10 @@ obtenidos mediante simulaciones numéricas y ajustar el modelo según sea necesa
 \subsection{Procedimiento analítico}
 % === FIGURA 4 ===
 \begin{figure}[h]
-    \centering
-    \includegraphics[width=0.8\textwidth]{4.png} % Reemplazar con ruta real
-    \caption{Convertidor Boost con pérdidas en los elementos y modelo de batería.}
-    \label{fig:procedimiento}
+	\centering
+	\includegraphics[width=0.8\textwidth]{4.png} % Reemplazar con ruta real
+	\caption{Convertidor Boost con pérdidas en los elementos y modelo de batería.}
+	\label{fig:procedimiento}
 \end{figure}
 
 El procedimiento analítico para resolver las ecuaciones diferenciales ordinarias (EDOs) que modelan
@@ -214,16 +214,16 @@ El sistema de carga de baterías está representada por un circuito que incluye 
 muestra en la siguiente ecuación diferencial:
 
 \[
-    (R_{bat} + R_x + R_c) \cdot \frac{dq(t)}{dt} + \frac{q(t)}{C} = V_0 \sin(\omega t)
+	(R_{bat} + R_x + R_c) \cdot \frac{dq(t)}{dt} + \frac{q(t)}{C} = V_0 \sin(\omega t)
 \]
 
 Definiciones:
 \begin{itemize}
-    \item \(q(t)\) → Es la carga almacenada en el condensador.
-    \item \(C\) → Es la capacitancia del condensador.
-    \item \(V_0\) → Es la tensión de la fuente de voltaje de la batería.
-    \item \(\omega\) → Es la frecuencia de la señal sinusoidal.
-    \item \(R_{bat}\), \(R_x\), \(R_c\) → Resistencias en el circuito.
+	\item \(q(t)\) → Es la carga almacenada en el condensador.
+	\item \(C\) → Es la capacitancia del condensador.
+	\item \(V_0\) → Es la tensión de la fuente de voltaje de la batería.
+	\item \(\omega\) → Es la frecuencia de la señal sinusoidal.
+	\item \(R_{bat}\), \(R_x\), \(R_c\) → Resistencias en el circuito.
 \end{itemize}
 
 Esta ecuación es de primer orden, lo que implica que la carga \(q(t)\) depende de su derivada
@@ -234,7 +234,7 @@ Para abordar la solución homogénea de la ecuación diferencial, primero debemo
 término sinusoidal de la ecuación original, lo que da lugar a la siguiente forma simplificada:
 
 \[
-    (R_{bat} + R_x + R_c) \cdot \frac{dq(t)}{dt} + \frac{q(t)}{C} = 0
+	(R_{bat} + R_x + R_c) \cdot \frac{dq(t)}{dt} + \frac{q(t)}{C} = 0
 \]
 
 Este es un sistema lineal de primer orden con coeficientes constantes, que corresponde a una
@@ -251,30 +251,30 @@ opuestos de la ecuación.
 La ecuación original se puede escribir de la siguiente forma:
 
 \[
-    \frac{dq(t)}{dt} = -\frac{(R_{bat} + R_x + R_c)}{C} \cdot q(t)
+	\frac{dq(t)}{dt} = -\frac{(R_{bat} + R_x + R_c)}{C} \cdot q(t)
 \]
 
 Ahora, separamos las variables, llevando \(q(t)\) a un lado y \(dt\) al otro:
 
 \[
-    \frac{1}{q(t)} dq(t) = -\frac{(R_{bat} + R_x + R_c)}{C} dt
+	\frac{1}{q(t)} dq(t) = -\frac{(R_{bat} + R_x + R_c)}{C} dt
 \]
 
 Integrando ambos lados, tenemos:
 
 \[
-    \int \frac{1}{q(t)} dq(t) = -\int \frac{(R_{bat} + R_x + R_c)}{C} dt
+	\int \frac{1}{q(t)} dq(t) = -\int \frac{(R_{bat} + R_x + R_c)}{C} dt
 \]
 
 \[
-    \ln |q(t)| = -\frac{(R_{bat} + R_x + R_c)}{C} \cdot t  + A
+	\ln |q(t)| = -\frac{(R_{bat} + R_x + R_c)}{C} \cdot t  + A
 \]
 
 Donde \(A\) es una constante de integración que se determinará mediante las condiciones
 iniciales. Exponenciando ambos lados de la ecuación para despejar \(q_h(t)\):
 
 \[
-    q_h(t) = Ae^{-\frac{(R_{bat} + R_x + R_c)}{C} \cdot t}
+	q_h(t) = Ae^{-\frac{(R_{bat} + R_x + R_c)}{C} \cdot t}
 \]
 
 Está es la solución homogénea \(q_h(t)\) de la ecuación diferencial. El término exponencial
@@ -282,7 +282,7 @@ describe el comportamiento de la carga almacenada en el condensador en
 el tiempo, que decae exponencialmente con una constante de tiempo \(\tau\), dado por:
 
 \[
-    \tau = C(R_{bat} + R_x + R_c)
+	\tau = C(R_{bat} + R_x + R_c)
 \]
 
 Donde \(\tau\) es la constante de tiempo del circuito, que determina la rapidez con la que la
@@ -292,7 +292,7 @@ sistema.
 Obteniendo la solución transitoria / homogénea:
 
 \[
-    q_h(t) = A e^{-\frac{t}{\tau}} \quad
+	q_h(t) = A e^{-\frac{t}{\tau}} \quad
 \]
 
 \subsubsection*{Solución particular / estacionaria}
@@ -300,14 +300,14 @@ Dado que el voltaje de entrada es de naturaleza sinusoidal, se busca una soluci�
 la forma:
 
 \[
-    q_p(t) = V_0\sin(\omega t)
+	q_p(t) = V_0\sin(\omega t)
 \]
 
 Donde:
 \begin{itemize}
-    \item \(q_p(t)\) → Es la carga almacenada en el condensador debido a la entrada sinusoidal.
-    \item \(V_0\) → Es la amplitud del voltaje de entrada.
-    \item \(\omega\) → Es la frecuencia de la señal sinusoidal.
+	\item \(q_p(t)\) → Es la carga almacenada en el condensador debido a la entrada sinusoidal.
+	\item \(V_0\) → Es la amplitud del voltaje de entrada.
+	\item \(\omega\) → Es la frecuencia de la señal sinusoidal.
 \end{itemize}
 
 \paragraph*{Método de Coeficientes Indeterminados}
@@ -319,24 +319,24 @@ En el método de coeficientes indeterminados, asumimos que la solución particul
 tendrá la forma:
 
 \[
-    q_p(\omega t) = B \sin(\omega t) + C \cos(\omega t)
+	q_p(\omega t) = B \sin(\omega t) + C \cos(\omega t)
 \]
 
 \[
-    q'_p(t) = B\omega \cos(\omega t) - C\omega \sin(\omega t)
+	q'_p(t) = B\omega \cos(\omega t) - C\omega \sin(\omega t)
 \]
 
 Al substituir esta forma en la ecuación diferencial homogénea, se obtiene el siguiente sistema
 de ecuaciones para la carga en el circuito:
 
 \[
-    (R_{bat} + R_x + R_c) \cdot \frac{dq(t)}{dt} + \frac{q(t)}{C} = V_0 \sin(\omega t)
+	(R_{bat} + R_x + R_c) \cdot \frac{dq(t)}{dt} + \frac{q(t)}{C} = V_0 \sin(\omega t)
 \]
 
 Sustituyendo la forma de \( q_p(t) \) y su derivada:
 
 \[
-    (R_{bat} + R_x + R_c)(B\omega \cos(\omega t) - C\omega \sin(\omega t)) + \frac{B \sin(\omega t) + C \cos(\omega t)}{C} = V_0 \sin(\omega t)
+	(R_{bat} + R_x + R_c)(B\omega \cos(\omega t) - C\omega \sin(\omega t)) + \frac{B \sin(\omega t) + C \cos(\omega t)}{C} = V_0 \sin(\omega t)
 \]
 
 Ahora comparamos los coeficientes de \( \sin(\omega t) \) y \( \cos(\omega t) \) en ambos lados de la ecuación. La
@@ -344,33 +344,33 @@ ecuación en el lado derecho tiene solo \( \sin(\omega t) \), por lo que el coef
 igual a cero en el lado izquierdo. Esto nos da dos ecuaciones:
 
 \begin{itemize}
-    \item Coeficiente de \( \sin(\omega t) \):
-          \[
-              (R_{bat} + R_x + R_c)(-C\omega) + \frac{B}{C} = V_0
-          \]
+	\item Coeficiente de \( \sin(\omega t) \):
+	      \[
+		      (R_{bat} + R_x + R_c)(-C\omega) + \frac{B}{C} = V_0
+	      \]
 
-    \item Coeficiente de \( \cos(\omega t) \):
-          \[
-              (R_{bat} + R_x + R_c) B\omega + \frac{C}{C} = 0
-          \]
+	\item Coeficiente de \( \cos(\omega t) \):
+	      \[
+		      (R_{bat} + R_x + R_c) B\omega + \frac{C}{C} = 0
+	      \]
 \end{itemize}
 
 Resolución de Constantes \( B \) y \( C \), de la segunda ecuación obtenemos:
 
 \[
-    (R_{bat} + R_x + R_c) B\omega + 1 = 0
+	(R_{bat} + R_x + R_c) B\omega + 1 = 0
 \]
 
 De aquí podemos despejar \( B \):
 
 \[
-    B = -\frac{1}{(R_{bat} + R_x + R_c) \omega}
+	B = -\frac{1}{(R_{bat} + R_x + R_c) \omega}
 \]
 
 Sustituyendo \( B \) en la primera ecuación:
 
 \[
-    (R_{bat} + R_x + R_c)(-C\omega) +  \frac{\frac{-1}{(R_{bat} + R_x + R_c) \omega}}{C}  = V_0
+	(R_{bat} + R_x + R_c)(-C\omega) +  \frac{\frac{-1}{(R_{bat} + R_x + R_c) \omega}}{C}  = V_0
 \]
 
 Finalmente, la solución particular \( q_p(t) \) es la suma de las funciones sinusoidales con las
@@ -381,7 +381,7 @@ La solución general del sistema es la combinación de la solución homogénea y
 es decir:
 
 \[
-    q(t) = q_h(t) + q_p(t)
+	q(t) = q_h(t) + q_p(t)
 \]
 
 Esto da como resultado una expresión general que describe el comportamiento de la carga a lo
@@ -396,31 +396,31 @@ ajusta a la realidad del sistema desde su inicio.
 La solución homogénea es:
 
 \[
-    q_h(t) = A e^{-\frac{t}{\tau}}
+	q_h(t) = A e^{-\frac{t}{\tau}}
 \]
 
 La solución particular es:
 
 \[
-    q_p(\omega t) = B \sin(\omega t) + C \cos(\omega t)
+	q_p(\omega t) = B \sin(\omega t) + C \cos(\omega t)
 \]
 
-Reemplazando en \(t = 0\), obtenemos:
-
-\[
-    q(0) = 0 = A e^{0} + B \sin(0) + C \cos(0)
-\]
-
-\[
-    0 = A + C
-\]
-
-Teniendo como resultado que \(C = -A\)
+% Reemplazando en \(t = 0\), obtenemos:
+%
+% \[
+%     q(0) = 0 = A e^{0} + B \sin(0) + C \cos(0)
+% \]
+%
+% \[
+%     0 = A + C
+% \]
+%
+% Teniendo como resultado que \(C = -A\)
 
 Entonces la solución general nos queda de la siguiente forma:
 
 \[
-    q(t) = A e^{-\frac{t}{\tau}} + B \sin(\omega t) - C \cos(\omega t)
+	q(t) = A e^{-\frac{t}{\tau}} + B \sin(\omega t) - C \cos(\omega t)
 \]
 
 \subsection{Limitaciones del enfoque}
@@ -461,11 +461,11 @@ Para poder abordar la complejidad de estos sistemas, es común hacer ciertas sim
 o aproximaciones teóricas. Algunas de estas aproximaciones incluyen:
 
 \begin{itemize}
-    \item \textbf{Linealización de sistemas no lineales:} Se puede aproximar un sistema no lineal por un sistema lineal en un rango específico de operación, utilizando técnicas como el método de Taylor para aproximar la ecuación alrededor de un punto de operación específico.
+	\item \textbf{Linealización de sistemas no lineales:} Se puede aproximar un sistema no lineal por un sistema lineal en un rango específico de operación, utilizando técnicas como el método de Taylor para aproximar la ecuación alrededor de un punto de operación específico.
 
-    \item \textbf{Modelo de primer orden:} En muchos casos, se puede simplificar un sistema complejo a un modelo de primer orden (como hemos hecho en este proyecto) que permita realizar un análisis simplificado sin perder la esencia del comportamiento dinámico del sistema.
+	\item \textbf{Modelo de primer orden:} En muchos casos, se puede simplificar un sistema complejo a un modelo de primer orden (como hemos hecho en este proyecto) que permita realizar un análisis simplificado sin perder la esencia del comportamiento dinámico del sistema.
 
-    \item \textbf{Aproximaciones de componentes:} En algunos casos, los componentes electrónicos pueden ser modelados de manera aproximada. Por ejemplo, un diodo no siempre se puede modelar de manera precisa en todas sus características, por lo que se puede usar un modelo simplificado de resistencia en serie y resistencia en paralelo para representar su comportamiento.
+	\item \textbf{Aproximaciones de componentes:} En algunos casos, los componentes electrónicos pueden ser modelados de manera aproximada. Por ejemplo, un diodo no siempre se puede modelar de manera precisa en todas sus características, por lo que se puede usar un modelo simplificado de resistencia en serie y resistencia en paralelo para representar su comportamiento.
 \end{itemize}
 
 \paragraph*{Impacto en los Resultados:}

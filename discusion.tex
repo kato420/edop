@@ -1,1 +1,11 @@
 \section{Discusion}
+
+El análisis realizado permitió estudiar el comportamiento dinámico de un sistema de carga para baterías eléctricas usando una EDO de primer orden. El modelo, basado en una malla simplificada con componentes RLC y una fuente alterna, ayudó a entender cómo la carga del condensador varía en el tiempo, mostrando claramente las fases transitoria y estacionaria.
+
+La solución analítica obtenida demostró que parámetros como la constante de tiempo influyen directamente en la estabilidad del sistema. Estos hallazgos concuerdan con lo planteado en estudios como el de Paipa et al. (2020), donde se resalta la importancia de reducir armónicos para mejorar la eficiencia en los cargadores. Aunque nuestro modelo es más simple, reproduce comportamientos clave que también aparecen en simulaciones más complejas.
+
+También se identificaron limitaciones. El sistema fue modelado en régimen lineal, sin considerar elementos no lineales como la conmutación del MOSFET o el comportamiento real del diodo. Esto reduce la aplicabilidad directa del modelo a sistemas reales, pero permite un análisis más claro y controlado de los efectos de los parámetros eléctricos, lo cual es muy útil en etapas de diseño.
+
+Frente a investigaciones más recientes como la de Cittanti et al. (2021) o Rajkumar et al. (2025), que advierten sobre la aparición de supraharmónicos en carga rápida, nuestro trabajo ofrece una base teórica sólida desde donde se podrían extender modelos más avanzados, integrando filtros activos o controladores dinámicos.
+
+Finalmente, el uso de Python como herramienta para visualizar la solución fue clave para interpretar mejor los resultados. Esta experiencia permitió aplicar conocimientos matemáticos del curso a un problema de ingeniería concreto, conectando teoría y práctica de manera estructurada y útil.

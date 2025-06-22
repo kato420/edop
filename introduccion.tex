@@ -9,6 +9,23 @@ Existen estudios recientes que han explorado la reducción de armónicos en sist
 
 La función de transferencia, como herramienta matemática clave en el análisis de sistemas dinámicos, ofrece una forma eficaz de modelar y optimizar el comportamiento de estos filtros, mejorando su desempeño en diversas condiciones. Además, el uso de modelos con función de transferencia no solo potencia la capacidad predictiva del comportamiento dinámico del sistema, sino que también permite diseñar filtros adaptativos que se ajusten a distintas condiciones operativas. A esto se suma la importancia de implementar controles que compensen componentes de secuencia negativa y cero, garantizando así una operación más estable de las microrredes (Toro Cea, M., 2015, p. 22). En este proyecto, se pretende utilizar la función de transferencia en los filtros eléctricos en cargadores de baterías para vehículos eléctricos, no solamente optimizando su rendimiento, sino también en la estabilización de la corriente, lo que ayuda a evitar sobrecargas, reducir los armónicos y contribuir a un futuro más sostenible en el transporte.
 
+Investigaciones recientes han profundizado en el modelado matemático y práctico de los filtros
+pasivos tipo EMI (como los de configuración $\pi$) en cargadores de vehículos eléctricos. Un estudio
+reciente desarrolló un filtro $\pi$ y lo validó técnicamente, diseñando sus componentes mediante la
+separación de modos diferencial y común, y obtuvo una atenuación de EMI en consonancia con las
+normas de compatibilidad electromagnética (CE) ---por ejemplo, alcanzó hasta $-43,4$ dB$\mu$V/m en
+ciertas bandas---, lo que permite ajustar sus parámetros con precisión mediante ecuaciones
+diferenciales y modelado dinámico (Wulandari et al., 2024).
+
+Además, se ha identificado que los cargadores rápidos de alto potencial (DC Fast-chargers) generan
+supra armónicos en el rango de frecuencia de 2 a 150 kHz, que pueden interactuar e incrementar la
+carga térmica y las pérdidas en transformadores y líneas. Un análisis experimental en simulaciones
+detalladas mostró cómo la topología del convertidor DC-DC puede influir en niveles de
+supraharmónicos, recomendando configuraciones que reducen significativamente estas emisiones
+(Rajkumar et al., 2025). En conjunto, estos hallazgos refuerzan la necesidad de diseñar filtros
+avanzados, incluso de tipo híbrido o activo, que aseguren tanto el cumplimiento de las normas
+IEC/IEEE como la fiabilidad operativa en contextos de carga rápida.
+
 \vspace{1cm}
 % --- PREGUNTA DE INVESTIGACIÓN ---
 \noindent\textbf{Pregunta de investigación:} \\
